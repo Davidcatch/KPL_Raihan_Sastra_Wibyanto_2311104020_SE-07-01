@@ -6,10 +6,10 @@ const input = readline.createInterface({
   output: process.stdout,
 });
 
-input.question('Nama: ', (nama) => {
-  input.question('jurusan: ', (jurusan) => {
-    input.question('universitas: ', (univ) => {
-      input.question('umur: ', (umur) => {
+input.question('Siapa nama kamu?: ', (nama) => {
+  input.question('Jurusan kamu?: ', (jurusan) => {
+    input.question('Universitas kamu?: ', (univ) => {
+      input.question('Umur kamu?: ', (umur) => {
         console.log('====================================');
         console.log(`Halo, ${nama}!`);
         console.log(`kamu berada di jurusan ${jurusan}`);
