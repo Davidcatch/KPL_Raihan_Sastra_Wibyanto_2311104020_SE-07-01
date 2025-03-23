@@ -64,8 +64,11 @@ db.PrintAllData();
 ## Output
 
 Hasil Output Penjumlahan:<br>
+
 <img src="https://github.com/user-attachments/assets/70461b08-67bd-4496-8c94-aafbbdece894" width=450><br>
+
 Hasil Output Penjumlahan dengan SimpleDatabase:<br>
+
 <img src="https://github.com/user-attachments/assets/5892018b-3ac5-4287-abcd-08f58b3e097f" width=600>
 
 ## Penjelasan
@@ -143,3 +146,7 @@ Karena File kedua digabung dan dimerge, sesuai perintah pada soal
 3. Push ke GitHub masing-masing branch.
 4. Merge kedua branch ke main satu per satu.
 5. Push hasil merge ke GitHub.
+
+contoh konflik setelah di merge:<br>
+
+<img src="https://github.com/user-attachments/assets/dd3c58ca-81c1-44ee-8b54-fa38972052bb" width=600>
