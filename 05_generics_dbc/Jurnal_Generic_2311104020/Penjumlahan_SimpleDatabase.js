@@ -4,8 +4,6 @@ class Penjumlahan {
   }
 }
 
-<<<<<<< HEAD
-=======
 class SimpleDataBase {
   constructor() {
     this.storedData = [];
@@ -24,7 +22,6 @@ class SimpleDataBase {
   }
 }
 
->>>>>>> implementasi-generic-class
 let angka1 = BigInt(23);
 let angka2 = BigInt(11);
 let angka3 = BigInt(10);
@@ -33,12 +30,9 @@ let penjumlahan = new Penjumlahan();
 let hasil = penjumlahan.JumlahTigaAngka(angka1, angka2, angka3);
 
 console.log('Hasil Penjumlahan Tiga Angka :', hasil.toString());
-<<<<<<< HEAD
-=======
 
 let db = new SimpleDataBase();
 db.AddNewData(angka1);
 db.AddNewData(angka2);
 db.AddNewData(angka3);
 db.PrintAllData();
->>>>>>> implementasi-generic-class
