@@ -1,7 +1,7 @@
 class SayaTubeVideo {
   constructor(title) {
-    if (typeof title !== 'string' || title.length === 0 || title.length > 100) {
-      throw new Error('Title harus berupa string, tidak boleh kosong, dan maksimal 100 karakter');
+    if (typeof title !== 'string' || title.length === 0 || title.length > 200) {
+      throw new Error('Title harus berupa string, tidak boleh kosong, dan maksimal 200 karakter');
     }
     this.id = Math.floor(10000 + Math.random() * 90000);
     this.title = title;
@@ -9,8 +9,8 @@ class SayaTubeVideo {
   }
 
   IncreasePlayCount(count) {
-    if (typeof count !== 'number' || count < 0 || count > 10000000) {
-      throw new Error('Play count harus berupa angka positif dan maksimal 10.000.000');
+    if (typeof count !== 'number' || count < 0 || count > 25000000) {
+      throw new Error('Play count harus berupa angka positif dan maksimal 25.000.000');
     }
     try {
       let newPlayCount = this.playCount + count;
@@ -19,7 +19,7 @@ class SayaTubeVideo {
       }
       this.playCount = newPlayCount;
     } catch (error) {
-      console.error(`Error: ${error.message}`);
+      console.error(error.message);
     }
   }
 
@@ -48,12 +48,18 @@ class SayaTubeUser {
     if (!(video instanceof SayaTubeVideo)) {
       throw new Error('Hanya objek dari SayaTubeVideo yang dapat ditambahkan');
     }
+    if (video === null) {
+      throw new Error('Video yang ditambahkan tidak boleh null');
+    }
+    if (video.playCount > Number.MAX_SAFE_INTEGER) {
+      throw new Error('Play count video melebihi batas maksimum integer');
+    }
     this.uploadedVideos.push(video);
   }
 
   PrintAllVideoPlaycount() {
     console.log(`User: ${this.username}`);
-    this.uploadedVideos.forEach((video, index) => {
+    this.uploadedVideos.slice(0, 8).forEach((video, index) => {
       console.log(`Video ${index + 1} judul: ${video.title}`);
     });
   }
@@ -68,3 +74,15 @@ movies.forEach((movie) => {
 });
 
 user.PrintAllVideoPlaycount();
+
+const testVideo = new SayaTubeVideo('Test Video Exception Handling');
+for (let i = 0; i < 10; i++) {
+  try {
+    testVideo.IncreasePlayCount(25000000);
+  } catch (error) {
+    console.error(error.message);
+  }
+}
+testVideo.PrintVideoDetails();
+
+module.exports = { SayaTubeVideo, SayaTubeUser };
