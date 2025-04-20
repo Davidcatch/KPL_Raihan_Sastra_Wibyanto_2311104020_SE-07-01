@@ -1,0 +1,8 @@
+{
+  "mata_kuliah": [
+    { "kode": "SE2211", "nama": "Basis Data" },
+    { "kode": "SE2212", "nama": "Konstruksi Perangkat Lunak" },
+    { "kode": "SE2213", "nama": "Arsitektur Desain Perangkat Lunak" },
+    { "kode": "SE2214", "nama": "Rekayasa Kebutuhan Perangkat Lunak" }
+  ]
+}

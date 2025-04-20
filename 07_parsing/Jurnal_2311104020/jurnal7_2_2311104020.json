@@ -1,0 +1,25 @@
+{
+  "team_members": [
+    {
+      "nim": "2311104020",
+      "first_name": "Raihan",
+      "last_name": "Sastra Wibyanto",
+      "age": 20,
+      "gender": "Laki-laki"
+    },
+    {
+      "nim": "2311104028",
+      "first_name": "Aulia Ahmad ",
+      "last_name": "Ghaus Adzam",
+      "age": 20,
+      "gender": "Laki-laki"
+    },
+    {
+      "nim": "2311104038",
+      "first_name": "Ghaza Zidane",
+      "last_name": "Nurraihan",
+      "age": 20,
+      "gender": "Pria"
+    }
+  ]
+}
