@@ -43,6 +43,29 @@ class TeamMembers_2311104020 {
 TeamMembers_2311104020.ReadJSON();
 
 ```
+GlossaryItem_2311104020
+```js
+import { readFile } from 'fs/promises';
+
+class GlossaryItem2311104020 {
+  static async ReadJSON() {
+    const filePath = './jurnal7_3_2311104020.json';
+
+    try {
+      const data = await readFile(filePath, 'utf8');
+      const jsonData = JSON.parse(data);
+      const glossEntry = jsonData.glossary.GlossDiv.GlossList.GlossEntry;
+
+      console.log('=== Hasil Deserialisasi GlossEntry ===');
+      console.log(glossEntry);
+    } catch (err) {
+      console.error('Gagal membaca atau parsing JSON:', err);
+    }
+  }
+}
+
+GlossaryItem2311104020.ReadJSON();
+```
 ### File JSON
 jurnal7_1_2311104020
 ```json
@@ -84,6 +107,31 @@ jurnal7_2_2311104020
 }
 
 ```
+jurnal7_3_2311104020
+```json
+{
+  "glossary": {
+    "title": "example glossary",
+    "GlossDiv": {
+      "title": "S",
+      "GlossList": {
+        "GlossEntry": {
+          "ID": "SGML",
+          "SortAs": "SGML",
+          "GlossTerm": "Standard Generalized Markup Language",
+          "Acronym": "SGML",
+          "Abbrev": "ISO 8879:1986",
+          "GlossDef": {
+            "para": "A meta-markup language.",
+            "GlossSeeAlso": ["GML", "XML"]
+          },
+          "GlossSee": "markup"
+        }
+      }
+    }
+  }
+}
+```
 ## Output
 Hasil parsing DataMahasiswa:<br>
 
@@ -92,6 +140,10 @@ Hasil parsing DataMahasiswa:<br>
 Hasil parsing TeamMembers:<br>
 
 <img src="https://github.com/user-attachments/assets/70e68294-22ed-4879-80b2-9040b022d010" width=300>
+
+Hasil GlossaryItem:<br>
+
+<img src="https://github.com/user-attachments/assets/800add13-637b-4ba7-8d3b-b4a8d8ab18d8" width=300>
 
 
 ## Penjelasan
@@ -107,4 +159,10 @@ Hasil parsing tersebut kemudian ditampilkan dalam format yang terstruktur dengan
 Program di atas merupakan contoh implementasi parsing data JSON untuk menampilkan daftar anggota tim menggunakan Node.js. Parsing JSON adalah proses mengubah data dari format teks JSON menjadi objek JavaScript yang dapat diolah oleh program. Pada contoh ini, data disimpan dalam file jurnal7_2_2311104020.json yang berisi array dari beberapa anggota tim beserta informasi detail seperti NIM, nama depan, nama belakang, usia, dan gender.
 Proses diawali dengan mengimpor fungsi readFile dari modul fs/promises untuk membaca file secara asynchronous. Kelas TeamMembers_2311104020 kemudian dibuat dengan metode statis ReadJSON() yang bertanggung jawab untuk membaca dan memproses data. Setelah file berhasil dibaca, data mentah dalam bentuk string (rawData) diubah menjadi objek JavaScript menggunakan fungsi JSON.parse().
 Hasil parsing tersebut kemudian ditampilkan dalam format yang terstruktur dengan melakukan iterasi pada array team_members menggunakan metode forEach. Setiap anggota tim ditampilkan dengan format yang mencakup NIM, nama lengkap, usia, dan gender. Dengan menggunakan teknik parsing JSON ini, program mampu membaca dan menampilkan data dari file eksternal secara efisien, sekaligus memisahkan antara penyimpanan data (file JSON) dan logika presentasi (kode JavaScript). Pendekatan ini sangat berguna dalam pengembangan aplikasi yang membutuhkan pemisahan antara data dan tampilan.
+</p>
+
+### GlossaryItem
+<p>
+Pertama, kode ini mengimpor fungsi readFile dari modul bawaan Node.js yaitu 'fs/promises', yang memungkinkan pembacaan file secara asinkron menggunakan Promise. Di dalam class GlossaryItem2311104020, terdapat method statis ReadJSON() yang dideklarasikan sebagai async, agar dapat menggunakan await saat membaca file.
+Di dalam method tersebut, program mencoba membaca isi file JSON dengan encoding 'utf8'. Setelah file berhasil dibaca, datanya di-parse ke dalam bentuk objek JavaScript menggunakan JSON.parse(). Dari objek hasil parsing tersebut, bagian yang diambil hanya GlossEntry, yang berada di dalam struktur berlapis: glossary → GlossDiv → GlossList → GlossEntry. Data pada bagian GlossEntry kemudian dicetak ke konsol menggunakan console.log() sebagai hasil deserialisasi. Jika terjadi error selama pembacaan atau parsing file, maka error akan ditampilkan di konsol. Terakhir, method ReadJSON() dipanggil langsung untuk mengeksekusi proses tersebut saat file dijalankan.
 </p>
