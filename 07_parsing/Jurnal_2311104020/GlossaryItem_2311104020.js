@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 
-class GlossaryItem2311104020 {
+class GlossaryItem_2311104020 {
   static async ReadJSON() {
     const filePath = './jurnal7_3_2311104020.json';
 
@@ -17,5 +17,4 @@ class GlossaryItem2311104020 {
   }
 }
 
-// Langsung jalankan ReadJSON
-GlossaryItem2311104020.ReadJSON();
+GlossaryItem_2311104020.ReadJSON();
