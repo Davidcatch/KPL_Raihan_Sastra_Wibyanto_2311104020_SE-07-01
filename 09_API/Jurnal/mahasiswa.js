@@ -42,7 +42,7 @@ const options = {
       },
     ],
   },
-  apis: ['./mahasiswa.js'], // files containing annotations as above
+  apis: ['./mahasiswa.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
@@ -59,11 +59,11 @@ app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
  * @swagger
  * /Mahasiswa:
  *   get:
- *     summary: Returns the list of all Mahasiswa
+ *     summary: Mendapatakan daftar semua Mahasiswa
  *     tags: [Mahasiswa]
  *     responses:
  *       200:
- *         description: The list of Mahasiswa
+ *         description: Sukses mendapatkan data Mahasiswa
  *         content:
  *           application/json:
  *             schema:
@@ -79,7 +79,7 @@ app.get('/api/Mahasiswa', (req, res) => {
  * @swagger
  * /Mahasiswa/{id}:
  *   get:
- *     summary: Get a Mahasiswa by id
+ *     summary: Mendapatkan data Mahasiswa berdasarkan id
  *     tags: [Mahasiswa]
  *     parameters:
  *       - in: path
@@ -87,16 +87,16 @@ app.get('/api/Mahasiswa', (req, res) => {
  *         schema:
  *           type: integer
  *         required: true
- *         description: The Mahasiswa index
+ *         description: Id Mahasiswa (dimulai dari 0)
  *     responses:
  *       200:
- *         description: The Mahasiswa description by id
+ *         description: Sukses mendapatkan data Mahasiswa
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Mahasiswa'
  *       404:
- *         description: Mahasiswa not found
+ *         description: Mahasiswa tidak ditemukan
  */
 app.get('/api/Mahasiswa/:id', (req, res) => {
   const id = parseInt(req.params.id);
@@ -111,7 +111,7 @@ app.get('/api/Mahasiswa/:id', (req, res) => {
  * @swagger
  * /Mahasiswa:
  *   post:
- *     summary: Create a new Mahasiswa
+ *     summary: Menambahkan data Mahasiswa baru
  *     tags: [Mahasiswa]
  *     requestBody:
  *       required: true
@@ -121,13 +121,13 @@ app.get('/api/Mahasiswa/:id', (req, res) => {
  *             $ref: '#/components/schemas/Mahasiswa'
  *     responses:
  *       200:
- *         description: The Mahasiswa was successfully created
+ *         description: Mahasiswa berhasil ditambahkan
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Mahasiswa'
  *       500:
- *         description: Some server error
+ *         description: Internal server error
  */
 app.post('/api/Mahasiswa', (req, res) => {
   const { Name, Nim, Course, Year } = req.body;
@@ -140,7 +140,7 @@ app.post('/api/Mahasiswa', (req, res) => {
  * @swagger
  * /Mahasiswa/{id}:
  *   delete:
- *     summary: Remove the Mahasiswa by id
+ *     summary: Menghapus data mahasiswa berdasarkan id
  *     tags: [Mahasiswa]
  *     parameters:
  *       - in: path
@@ -148,12 +148,12 @@ app.post('/api/Mahasiswa', (req, res) => {
  *         schema:
  *           type: integer
  *         required: true
- *         description: The Mahasiswa index
+ *         description: Id mahasiswa (dimulai dari 0)
  *     responses:
  *       200:
- *         description: The Mahasiswa was deleted
+ *         description: Mahasiswa berhasil dihapus
  *       404:
- *         description: Mahasiswa not found
+ *         description: Mahasiswa tidak ditemukan
  */
 app.delete('/api/Mahasiswa/:id', (req, res) => {
   const id = parseInt(req.params.id);
@@ -179,18 +179,18 @@ app.delete('/api/Mahasiswa/:id', (req, res) => {
  *       properties:
  *         Name:
  *           type: string
- *           description: The name of the student
+ *           description: Nama mahasiswa
  *         Nim:
  *           type: string
- *           description: The student ID
+ *           description: Id mahsiswa
  *         Course:
  *           type: array
  *           items:
  *             type: string
- *           description: List of courses
+ *           description: list kursus yang diambil
  *         Year:
  *           type: integer
- *           description: The enrollment year
+ *           description: Tahun masuk mahasiswa
  *       example:
  *         Name: Raihan Sastra Wibyanto
  *         Nim: 2311104020
