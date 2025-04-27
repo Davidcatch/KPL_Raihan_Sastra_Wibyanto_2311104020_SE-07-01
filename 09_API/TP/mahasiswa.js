@@ -88,7 +88,7 @@ app.get('/api/mahasiswa', (req, res) => {
  *         description: Mahasiswa tidak ditemukan
  */
 app.get('/api/mahasiswa/:id', (req, res) => {
-  const id = parseInt(req.params.id); // Perhatikan: menggunakan 'id' bukan 'index'
+  const id = parseInt(req.params.id);
 
   if (isNaN(id)) {
     return res.status(400).json({ message: 'ID harus berupa angka' });
