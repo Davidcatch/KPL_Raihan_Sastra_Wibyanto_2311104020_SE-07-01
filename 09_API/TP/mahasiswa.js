@@ -68,15 +68,15 @@ app.get('/api/mahasiswa', (req, res) => {
  * @swagger
  * /api/mahasiswa/{id}:
  *   get:
- *     summary: Mendapatkan data mahasiswa berdasarkan index
+ *     summary: Mendapatkan data mahasiswa berdasarkan id
  *     tags: [Mahasiswa]
  *     parameters:
  *       - in: path
- *         name: index
+ *         name: id
  *         required: true
  *         schema:
  *           type: integer
- *         description: Index mahasiswa
+ *         description: Id mahasiswa (dimulai dari 0)
  *     responses:
  *       200:
  *         description: Sukses mendapatkan data mahasiswa
@@ -88,9 +88,14 @@ app.get('/api/mahasiswa', (req, res) => {
  *         description: Mahasiswa tidak ditemukan
  */
 app.get('/api/mahasiswa/:id', (req, res) => {
-  const index = parseInt(req.params.index);
-  if (index >= 0 && index < mahasiswaList.length) {
-    res.json(mahasiswaList[index]);
+  const id = parseInt(req.params.id); // Perhatikan: menggunakan 'id' bukan 'index'
+
+  if (isNaN(id)) {
+    return res.status(400).json({ message: 'ID harus berupa angka' });
+  }
+
+  if (id >= 0 && id < mahasiswaList.length) {
+    res.json(mahasiswaList[id]);
   } else {
     res.status(404).json({ message: 'Mahasiswa tidak ditemukan' });
   }
@@ -130,15 +135,15 @@ app.post('/api/mahasiswa', (req, res) => {
  * @swagger
  * /api/mahasiswa/{id}:
  *   delete:
- *     summary: Menghapus data mahasiswa berdasarkan index
+ *     summary: Menghapus data mahasiswa berdasarkan id
  *     tags: [Mahasiswa]
  *     parameters:
  *       - in: path
- *         name: index
+ *         name: id
  *         required: true
  *         schema:
  *           type: integer
- *         description: Index mahasiswa yang akan dihapus
+ *         description: Id mahasiswa (dimulai dari 0)
  *     responses:
  *       200:
  *         description: Mahasiswa berhasil dihapus
@@ -146,14 +151,24 @@ app.post('/api/mahasiswa', (req, res) => {
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Mahasiswa'
+ *       400:
+ *         description: ID harus berupa angka
  *       404:
  *         description: Mahasiswa tidak ditemukan
  */
 app.delete('/api/mahasiswa/:id', (req, res) => {
-  const index = parseInt(req.params.index);
-  if (index >= 0 && index < mahasiswaList.length) {
-    const deletedMahasiswa = mahasiswaList.splice(index, 1);
-    res.json(deletedMahasiswa[0]);
+  const id = parseInt(req.params.id);
+
+  if (isNaN(id)) {
+    return res.status(400).json({ message: 'ID harus berupa angka' });
+  }
+
+  if (id >= 0 && id < mahasiswaList.length) {
+    const deletedMahasiswa = mahasiswaList.splice(id, 1)[0];
+    res.json({
+      message: 'Mahasiswa berhasil dihapus',
+      data: deletedMahasiswa,
+    });
   } else {
     res.status(404).json({ message: 'Mahasiswa tidak ditemukan' });
   }
