@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hitung Pangkat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+  <div class="bg-white p-6 rounded-lg shadow-xl w-full max-w-md">
+    <h2 class="text-2xl font-bold text-center mb-4">Cari Nilai Pangkat</h2>
+
+    <input id="inputA" type="number" placeholder="Masukkan nilai a" class="w-full mb-3 p-2 border rounded" />
+    <input id="inputB" type="number" placeholder="Masukkan nilai b" class="w-full mb-3 p-2 border rounded" />
+
+    <button onclick="handlePangkat()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+      Hitung Pangkat
+    </button>
+
+    <div id="output" class="mt-4 font-semibold text-center"></div>
+  </div>
+
+  <script src="pangkat.js"></script>
+</body>
+</html>
