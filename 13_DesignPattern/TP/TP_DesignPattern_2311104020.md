@@ -3,7 +3,7 @@
 ### 2311104020<br> Raihan Sastra Wibyanto<br> SE-07-01
 
 ##  Source Code <img src="https://github.com/devicons/devicon/blob/master/icons/go/go-original-wordmark.svg" title="Golang" alt="Golang" width="40" height="40"/>
-### File JS
+### File go
 customer.go
 ```go
 package main
