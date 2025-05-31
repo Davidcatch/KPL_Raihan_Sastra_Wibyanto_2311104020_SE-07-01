@@ -89,49 +89,73 @@ Contoh PusatDataSingleton design pattern<br>
 
 ## Penjelasan
 ### MENJELASKAN DESIGN PATTERN SINGLETON
-<p>
+
 A. Berikan salah dua contoh kondisi dimana design pattern “Singleton” dapat digunakan.
-</p>
-<p>
+
 B. Berikan penjelasan singkat mengenai langkah-langkah dalam mengimplementasikan design
-pattern “Singleton”.</p>
-<p>
+pattern “Singleton”.
+
 C. Berikan tiga kelebihan dan kekurangan dari design pattern “Singleton”.
-</p>
+
 Jawaban
-<p>
+
 A. Design pattern singleton dapat digunakan di pemerintahan karna contoh yang sangat baik dari
    pola singleton da juga terdapat pada log sistem.
-</p>
-<p>
-B. Dalam mengimplementasikan design pattern singleton hal yang harus diperhatikan yaitu:<br>
-   1). Tambahkan bidang statis privat ke kelas untuk menyimpan instans singleton.<br>
-   2). Nyatakan metode pembuatan statis publik untuk mendapatkan instans singleton.<br>
-   3). Terapkan "laty initialization" di dalam metode statis. Metode ini harus membuat objek baru
-      pada panggilan pertamanya dan memasukkannya ke dalam kolom statis. Metode ini harus selalu
-      mengembalikan instance tersebut pada semua panggilan berikutnya.<br>
-   4). Jadikan konstruktor kelas bersifat privat. Metode statis kelas tersebut akan tetap dapat
-      memanggil konstruktor, tetapi tidak objek lainnya.<br>
-   6). Periksa kode klien dan ganti semua panggilan langsung ke konstruktor singleton dengan
-      panggilan ke metode pembuatan statisnya.<br>
-</p>
-<p>
-C. Kelebihan  dari design pattern singleton yaitu:<br>
-   1). Suatu kelas hanya memiliki satu contoh.<br>
-   2). Dapat Memperoleh titik akses global ke instansi tersebut.<br>
-   3). Objek singleton diinisialisasi hanya dapat diminta pertama kali.<br>
-   Kekurangan dari design pattern singleton yaitu:<br>
-   1). Melanggar Prinsip Tanggung Jawab Tunggal.<br>
-   2). Pola Singleton dapat menutupi desain yang buruk, misalnya, ketika komponen program
-      mengetahui terlalu banyak tentang satu sama lain.<br>
-   4). Pola tersebut memerlukan penanganan khusus dalam lingkungan multithread sehingga beberapa
-      thread tidak akan membuat objek tunggal beberapa kali.<br>
-   6). Sulit untuk menguji unit kode klien pengujian bergantung pada pewarisan saat membuat
-      objek tiruan. Karena konstruktor kelas singleton bersifat privat dan mengganti metode
-      statis tidak mungkin dilakukan dalam sebagian besar bahasa, dan perlu memikirkan cara
-      kreatif untuk meniru singleton. Atau jangan tulis pengujiannya Atau jangan gunakan pola
-      Singleton.<br>
-</p>
+
+B. Dalam mengimplementasikan design pattern singleton hal yang harus diperhatikan yaitu:
+<ol>
+	<li>
+	 Tambahkan bidang statis privat ke kelas untuk menyimpan instans singleton.		
+	</li>
+   	<li>
+	 Nyatakan metode pembuatan statis publik untuk mendapatkan instans singleton.		
+	</li>
+ 	<li>
+	 Terapkan "laty initialization" di dalam metode statis. Metode ini harus membuat objek baru
+      	 pada panggilan pertamanya dan memasukkannya ke dalam kolom statis. Metode ini harus selalu
+      	 mengembalikan instance tersebut pada semua panggilan berikutnya.
+	</li>
+ 	<li>
+	 Jadikan konstruktor kelas bersifat privat. Metode statis kelas tersebut akan tetap dapat
+         memanggil konstruktor, tetapi tidak objek lainnya.
+	</li>
+	<li>
+	 Periksa kode klien dan ganti semua panggilan langsung ke konstruktor singleton dengan
+      	 panggilan ke metode pembuatan statisnya.	
+	</li> 
+</ol>
+C. Kelebihan  dari design pattern singleton yaitu:
+<ol>
+	<li>
+	 Suatu kelas hanya memiliki satu contoh.	
+	</li>
+ 	 Dapat Memperoleh titik akses global ke instansi tersebut.
+	<li>
+	 Objek singleton diinisialisasi hanya dapat diminta pertama kali.
+	</li>
+</ol>
+
+Kekurangan dari design pattern singleton yaitu:
+
+<ol>
+	<li>
+	 Melanggar Prinsip Tanggung Jawab Tunggal.
+	</li>
+	<li>
+	  Pola Singleton dapat menutupi desain yang buruk, misalnya, ketika komponen program
+          mengetahui terlalu banyak tentang satu sama lain.
+	</li>
+         Pola tersebut memerlukan penanganan khusus dalam lingkungan multithread sehingga 
+         beberapa thread tidak akan membuat objek tunggal beberapa kali.
+	<li>
+	 Sulit untuk menguji unit kode klien pengujian bergantung pada pewarisan saat membuat
+         objek tiruan. Karena konstruktor kelas singleton bersifat privat dan mengganti metode
+         statis tidak mungkin dilakukan dalam sebagian besar bahasa, dan perlu memikirkan cara
+         kreatif untuk meniru singleton. Atau jangan tulis pengujiannya Atau jangan gunakan pola
+         Singleton.	
+	</li> 
+</ol>
+
 ============================================================================================
 <br>
 <p>
