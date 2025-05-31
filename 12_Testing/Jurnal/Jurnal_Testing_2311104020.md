@@ -107,7 +107,7 @@ test.html
 ```
 
 ## Output
-Hasil Demonstrasi WEB API:<br>
+Hasil:<br>
 Contoh menghitung pangkat<br>
 <img src="https://github.com/user-attachments/assets/8c2e19df-cac3-44b0-ab7b-60c52f7b293d" width=300><br>
 Contoh menghitung pangkat tidak valid<br>
