@@ -118,36 +118,49 @@ Contoh Design Pattern "Observer"<br>
 
 ## Penjelasan
 ### MENJELASKAN SALAH SATU DESIGN PATTERN
-A. Berikan salah satu contoh kondisi dimana design pattern “Observer” dapat digunakan
+A. Berikan salah satu contoh kondisi dimana design pattern “Observer” dapat digunakan<br>
 B. Berikan penjelasan singkat mengenai langkah-langkah dalam mengimplementasikan design pattern
-“Observer”
-C. Berikan kelebihan dan kekurangan dari design pattern “Observer”
-Jawaban
+“Observer”<br>
+C. Berikan kelebihan dan kekurangan dari design pattern “Observer”<br>
+Jawaban<br>
+
 A. Design pattern observer dapat digunakan seperti di toko handphone dan berlangganan koran 
 atau majalah tentang munculnya produk baru yang belum diketahui oleh pelanggan.
-B. Dalam mengimplementasikan design pattern observer hal yang harus diperhatikan yaitu:
+
+B. Dalam mengimplementasikan design pattern observer hal yang harus diperhatikan yaitu:<br>
    1. Pisahkan logika bisnis
       - Fungsionalitas inti = bertindak sebagain penerbit.
       - Kode lain yang tergantung = menjadi pelanggan.
+        
    2. Antarmuka pelanggan
       - Harus memiliki minimal satu metode: update().
+        
    3. Antarmuka penerbit
       - Harus punya metode attach(pelanggan) dan detach(pelanggan) untuk mengelola pelanggan.
+        
    4. Manajemen langganan
       - Letakkan logika langganan di kelas abstrak penerbit atau gunakan komposisi bila penerbit
         sudah ada.
+        
    5. Penerbit konkret
       - Saat terjadi perubahan/kejadian, panggil update() pada semua pelanggan.
+        
    6. Pelanggan konkret
       - Implementasikan update(context) untuk menerima info.
       - Bisa juga menerima referensi penerbit sebagai parameter atau lewat konstruktor.
+        
    7. Klien membuat dan mendaftarkan pelanggan ke penerbit yang sesuai.
+
 C. Kelebihan  dari design pattern observer yaitu:
+
    1. Prinsip Terbuka / Tertutup.
    2. Dapat membuat hubungan antar objek pada waktu proses.
+      
    Kekurangan dari design pattern observer yaitu:
+   
    1. Pelanggan diberitahukan secara acak.
-================================================================================================
+
+============================================================================================
 <p>
 👕 Observer Pattern dalam Go: Notifikasi Stok Barang Otomatis!
 Proyek ini adalah simulasi penerapan Observer Design Pattern menggunakan bahasa Go. Diilustrasikan melalui interaksi antara Customer dan Item, program ini memungkinkan pelanggan untuk mendapatkan notifikasi otomatis ketika sebuah barang (seperti "Nike Shirt") kembali tersedia.
