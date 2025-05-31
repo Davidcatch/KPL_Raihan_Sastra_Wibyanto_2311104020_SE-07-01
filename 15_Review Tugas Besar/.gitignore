@@ -1,0 +1,6 @@
+# Electron module 
+Jurnal/node_modules/
+
+# Json
+package-lock.json
+package.json
